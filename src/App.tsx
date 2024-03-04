@@ -1,6 +1,7 @@
 import "./styles.css";
 import IMAGE from "./map.png";
 import SVG from "./hello.svg";
+import ClickCounter from "./ClickCounter";
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       </h1>
       <img src={IMAGE} alt="picture" width="300" />
       <img src={SVG} alt="svg-example" width="300" />
+      <ClickCounter />
     </>
   );
 };
