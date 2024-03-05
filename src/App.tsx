@@ -1,21 +1,21 @@
-import "./styles.css";
-import IMAGE from "./map.png";
-import SVG from "./hello.svg";
-import ClickCounter from "./ClickCounter";
+import './styles.css'
+import IMAGE from './map.png'
+import SVG from './hello.svg'
+import ClickCounter from './ClickCounter'
 
 const App = () => {
-  const name = "Gary";
+  const age = 5
   return (
     <>
       <h1>
-        React TypeScript Webpack Starter Template - {process.env.NODE_ENV}{" "}
-        {process.env.name}{" "}
+        React TypeScript Webpack Starter Template -{age} {process.env.NODE_ENV}{' '}
+        {process.env.name}{' '}
       </h1>
       <img src={IMAGE} alt="picture" width="300" />
       <img src={SVG} alt="svg-example" width="300" />
       <ClickCounter />
     </>
-  );
-};
+  )
+}
 
-export default App;
+export default App
