@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState } from "react"
 
 const ClickCounter = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
 
   return (
     <div>
@@ -9,7 +9,7 @@ const ClickCounter = () => {
         Count {count}
       </button>
     </div>
-  );
-};
+  )
+}
 
-export default ClickCounter;
+export default ClickCounter
