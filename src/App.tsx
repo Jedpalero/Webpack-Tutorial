@@ -4,7 +4,7 @@ import SVG from "./hello.svg";
 import ClickCounter from "./ClickCounter";
 
 const App = () => {
-  // const name = "Gary";
+  const name = "Gary";
   return (
     <>
       <h1>
