@@ -1,20 +1,41 @@
+import HomePage from './components/Home.page'
+import RQSuperHeroesPage from './components/RQSuperHeroes.page'
+import SuperHeroesPage from './components/SuperHeroes.page'
 import './styles.css'
-import IMAGE from './map.png'
-import SVG from './hello.svg'
-import ClickCounter from './ClickCounter'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import { QueryClientProvider, QueryClient } from 'react-query'
+import { ReactQueryDevtools } from 'react-query/devtools'
+
+const queryClient = new QueryClient()
 
 const App = () => {
-  const age = 5
   return (
-    <>
-      <h1>
-        React TypeScript Webpack Starter Template -{age} {process.env.NODE_ENV}{' '}
-        {process.env.name}{' '}
-      </h1>
-      <img src={IMAGE} alt="picture" width="300" />
-      <img src={SVG} alt="svg-example" width="300" />
-      <ClickCounter />
-    </>
+    <QueryClientProvider client={queryClient}>
+      <Router>
+        <div>
+          <nav>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/super-heroes">Traditional Super Heroes</Link>
+              </li>
+              <li>
+                <Link to="/rq-super-heroes">RQ Super Heroes</Link>
+              </li>
+            </ul>
+          </nav>
+          <Routes>
+            <Route path="/super-heroes" element={<SuperHeroesPage />} />
+            <Route path="/rq-super-heroes" element={<RQSuperHeroesPage />} />
+
+            <Route path="/" element={<HomePage />} />
+          </Routes>
+        </div>
+      </Router>
+      <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
+    </QueryClientProvider>
   )
 }
 
