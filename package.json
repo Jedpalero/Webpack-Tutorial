@@ -15,11 +15,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@tanstack/react-query": "^5.25.0",
+    "@tanstack/react-query-devtools": "^5.25.0",
     "axios": "^1.6.7",
     "json-server": "^1.0.0-alpha.23",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-query": "^3.39.3",
     "react-router-dom": "^6.22.2"
   },
   "devDependencies": {
