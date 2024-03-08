@@ -5,8 +5,12 @@ import './styles.css'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import NewSuperHeroes from './components/NewSuperHeroes.page'
+import RQSuperHero from './components/RQSuperHero'
+import ParallelQueries from './components/ParallelQueries'
+import DynamicParallel from './components/DynamicParallel'
 
-const queryClient = new QueryClient()
+export const queryClient = new QueryClient()
 
 const App = () => {
   return (
@@ -24,13 +28,23 @@ const App = () => {
               <li>
                 <Link to="/rq-super-heroes">RQ Super Heroes</Link>
               </li>
+              <li>
+                <Link to="/new-super-heroes">New Super Heroes</Link>
+              </li>
             </ul>
           </nav>
           <Routes>
             <Route path="/super-heroes" element={<SuperHeroesPage />} />
             <Route path="/rq-super-heroes" element={<RQSuperHeroesPage />} />
+            <Route path="new-super-heroes" element={<NewSuperHeroes />} />
 
+            <Route path="/rq-super-heroes/:heroId" element={<RQSuperHero />} />
             <Route path="/" element={<HomePage />} />
+            <Route path="/rq-parallel" element={<ParallelQueries />} />
+            <Route
+              path="/rq-dynamic-parallel"
+              element={<DynamicParallel heroIds={[1, 3]} />}
+            />
           </Routes>
         </div>
       </Router>
